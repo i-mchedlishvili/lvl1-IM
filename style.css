@@ -1,5 +1,74 @@
+.page {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20vh;
+    flex-wrap: wrap;
+}
+
+
+
+
 table {
     display: flex;
     justify-content: center;
 }
 
+tbody {
+    display: flex;
+}
+
+td {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    padding: 10px !important;
+}
+
+tr {
+    border: 1px solid black;
+}
+
+th {
+    padding: 20px !important;
+}
+
+#names {
+    display: inline-block;
+}
+
+
+.all-input {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.inputs {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.inputs button {
+    background-color: red !important;
+    width: 20vw;
+    height: 5vh;
+}
+
+input {
+    height: 5vh;
+    width: 20vw;
+}
+
+.subject {
+    display: flex;
+    flex-direction: column;
+    
+    
+}
+
+.subject button {
+    background-color: red !important;
+    width: 20vw;
+    height: 5vh;
+}
