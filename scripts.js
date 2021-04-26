@@ -1,3 +1,6 @@
+
+
+
 let subjects = ["kotlin", "javacript", "python"];
 let students = [
 {
@@ -16,6 +19,34 @@ let students = [
     grades: [6, 7, 3]
 }
 ];
+
+/*
+
+class subjects {
+    constructor(subjects) {
+        this.subjects = subjects;
+    }
+}
+
+let subjects = new subjects(["kotlin", "javacript", "python"])
+
+
+
+class user{
+    constructor(name, lastname, grades) {
+        this.name = name;
+        this.lastname = lastname;
+        this.grades = grades;
+    }
+
+}
+
+let john = new user('john', 'smith', [9, 5, 3])
+let george = new user('george', 'wesson', [3, 3, 6])
+let harold = new user('harold', 'wilson', [6, 7, 3])
+
+*/
+
 
 let averageGrade = [0, 0, 0];
 
