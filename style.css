@@ -1,0 +1,87 @@
+body {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding-top: 25vh !important;
+}
+
+table {
+  width: 50vw;
+  background-color: beige;
+  border-radius: 10px;
+}
+
+td {
+  text-align: center;
+}
+
+tr {
+  height: 30px;
+}
+
+tbody tr td:first-child,
+tbody tr td:nth-child(2) {
+  font-size: 20px;
+}
+
+.red {
+  background-color: #ff6347;
+  border-radius: 5px;
+  height: 20px;
+}
+
+.green {
+  background-color: #32cd32;
+  border-radius: 5px;
+  height: 20px;
+}
+
+.page {
+  display: flex;
+  justify-content: center;
+}
+
+.all-input {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.inputs {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.inputs button {
+  background-color: #6495ed !important;
+  width: 20vw;
+  height: 5vh;
+  border-radius: 10px;
+}
+
+input {
+  height: 5vh;
+  width: 20vw;
+  border-radius: 10px;
+  border: 1px solid #6495ed;
+  margin-bottom: 5px;
+  outline: none;
+}
+
+::placeholder {
+  opacity: 0.6;
+}
+
+.subject {
+  display: flex;
+  flex-direction: column;
+}
+
+.subject button {
+  background-color: #6495ed !important;
+  width: 20vw;
+  height: 5vh;
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
