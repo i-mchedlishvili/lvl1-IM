@@ -1,3 +1,5 @@
+
+
 let subjects = ["kotlin", "javacript", "python"];
 let students = [
 {
@@ -17,28 +19,61 @@ let students = [
 }
 ];
 
-let averageGrade = [0, 0, 0];
 
-for(let i = 0; i < students.length; i++) {
-    for(let k = 0; k < subjects.length; k++) {
-    averageGrade[k] += students[i].grades[k];
+/*
+class subjects {
+    constructor(subjects) {
+        this.subjects = subjects;
     }
 }
 
-for(let i = 0; i < averageGrade.length; i++) {
-   averageGrade[i] /= subjects.length;
+new subjects(["kotlin", "javacript", "python"]);
+
+class students{
+    constructor(name, lastname, grades) {
+        this.name = name;
+        this.lastname = lastname;
+        this.grades = grades;
+    }
+
 }
+
+
+new students('john', 'smith', [9, 5, 3])
+new students('george', 'wesson', [3, 3, 6])
+new students('harold', 'wilson', [6, 7, 3])
+*/
 
 let container = document.getElementById('cont');
 let header = document.querySelector('#cont thead tr');
 let tbody = document.querySelector('#cont tbody');
 
-let template = `<th>Name</th>` + `<th>Lastname</th>`;
-for (let i = 0; i < subjects.length; i++) {
-    template += `<th>${subjects[i]}</th>`;
+
+
+let averageGrade = [0, 0, 0];
+function average() {
+    for(let i = 0; i < students.length; i++) {
+        for(let k = 0; k < subjects.length; k++) {
+        averageGrade[k] += students[i].grades[k];
+        }
+    }
+    for(let i = 0; i < averageGrade.length; i++) {
+       averageGrade[i] /= subjects.length;
+    }
+    
+    
+    let template = `<th>Name</th>` + `<th>Lastname</th>`;
+    for (let i = 0; i < subjects.length; i++) {
+        template += `<th>${subjects[i]}</th>`;
+    }
+    
+    header.innerHTML += template;
+
 }
 
-header.innerHTML += template;
+average()
+
+
 
 template = '';
 for(let i = 0; i < students.length; i++) {
@@ -47,14 +82,14 @@ for(let i = 0; i < students.length; i++) {
                     <td>${students[i].lastname}</td>
                     `;
                     for(let k = 0; k < subjects.length; k++) {
-                        template += `<td class = "${averageGrade[k] > students[i].grades[k] ? 'red' : 'green'}">${students[i].grades[k]}</td>
+                        template += `<td class = "${averageGrade[k] > students[i].grades[k] ?
+                             'red' : 'green'}">${students[i].grades[k]}</td>
                         `;
                     }             
-
 template += `</tr>`
-
 }
 tbody.innerHTML += template;
+
 
 template = `<tr>` +
         `<td colspan ="2">Average</td>`;
@@ -65,78 +100,54 @@ template = `<tr>` +
         }
 
         template += `</tr>`;
-        tbody.innerHTML += template; 
+        document.querySelector('#cont tfoot').innerHTML += template; 
 
-
-document.getElementById("add-subject").addEventListener('click', function addSubject() {
-    let getSubjectValue = document.getElementById("subject-input").value;
-        if(getSubjectValue == "") {
-            alert("PLEASE FILL INPUT")
-            return false;
-        } else {
-            header.innerHTML += `<th>${getSubjectValue}</th>`;
-        }
-    })
-
-document.getElementById("add-but").addEventListener('click', function addStudent() {
-    let getStudentValue = document.getElementById("add-student").value;
-    let getGradeValue = document.getElementById("add-grades").value;
-
-})
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-document.getElementById("add-but").addEventListener('click', function addStudent() {
-    let getStudentValue = document.getElementById("add-student").value;
-    let getGradeValue = document.getElementById("add-grades").value;
-        if (getGradeValue == "", getStudentValue == "", getStudentValue && getGradeValue == "" || getGradeValue && getStudentValue == "") {
-            alert("PLEASE FILL ALL INPUTS")
-            return false;
-        } else {
-            
-for(let i = 0; i < 1; i++) {
-    for(let k = 0; k < 1; k++) {
-  //  averageGrade[k] += students[i].grades[k];
-  tbody.innerHTML += `<tr><td class = "${averageGrade[k] > students[i].grades[k] ? 'red' : 'green'}">${getGradeValue}</td></tr>`
-   
-  tbody.innerHTML += `<tr><td>${getStudentValue}</td></tr>`
-
-}
-    
-}
-            
-            
-            
-        }
         
+function addSubject() {
+    document.getElementById("add-subject").addEventListener('click', function() {
+        let getSubjectValue = document.getElementById("subject-input").value;
+            if(getSubjectValue == "") {
+                alert("PLEASE FILL INPUT")
+                return false;
+            } else {
+                subjects.push(getSubjectValue);
+                header.innerHTML += `<th>${getSubjectValue}</th>`;
+            }
+        })
+}
+
+
+addSubject()
+
+
+function addStudent() {
+    
+    document.getElementById("add-but").addEventListener('click', function() {
+        let getStudentName = document.getElementById("add-student-name").value;
+        let getStudentLastname = document.getElementById("add-student-lastname").value;
+        let getGradeValue = document.getElementById("add-grades").value;
+        
+    if(getStudentLastname == "" || getStudentName == "" || getGradeValue == "") {
+        alert("PLEASE FILL INPUTS")
+        return false;
+    } else {
+        for(let i = 0; i < 1; i++) {
+            for(let k = 0; k < 1; k++) {   
+               
+          tbody.innerHTML += `<tr>` + `<td>${getStudentName}</td>
+          <td>${getStudentLastname}</td><td class = "${averageGrade[k] > students[i].grades[k] ? 
+           'red' : 'green'}">${getGradeValue}</td>`
+           + `</tr>`
+           
+          }
+        }
+        }
     })
-        */
+}
+
+addStudent()
+
+
+
+
+
