@@ -1,18 +1,29 @@
-
 body {
    margin-top: 10% !important;
 }
-
 
 input {
     width: 50vw;
     height: 5vh;
 }
 
-
-
 .search {
     display: flex;
     justify-content: center;
 }
 
+li {
+    text-align: center;
+}
+
+.artist-name::before {
+    content: "Artist Name: ";
+}
+
+.music-name::before {
+    content: "Music Name: ";
+}
+
+.album-name::before {
+    content: "Album Name: ";
+}
