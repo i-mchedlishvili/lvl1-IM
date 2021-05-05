@@ -1,0 +1,18 @@
+
+body {
+   margin-top: 10% !important;
+}
+
+
+input {
+    width: 50vw;
+    height: 5vh;
+}
+
+
+
+.search {
+    display: flex;
+    justify-content: center;
+}
+
